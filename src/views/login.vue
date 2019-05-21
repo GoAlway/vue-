@@ -1,5 +1,8 @@
 <template>
-  <div id="login">
+  <div id="login" ref="login">
+    <div class="logo">
+      <img src="../assets/images/PClogo.png" width="400">
+    </div>
     <el-form :model="loginForm" :rules="rules" ref="loginForm" label-width="100px" status-icon>
       <el-form-item prop="loginname" label="用户名">
         <el-input v-model="loginForm.loginname" prefix-icon="el-icon-date"></el-input>
@@ -15,7 +18,6 @@
 </template>
 
 <script>
-import { error } from "util";
 export default {
   data() {
     var pwd = (rule, value, callback) => {
@@ -75,9 +77,20 @@ export default {
         }
       });
     }
-  }
+  },
+  created() {},
+  mounted() {}
 };
 </script>
 
 <style lang="scss">
+#login {
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/images/loginbg.png") 0 0 no-repeat;
+  background-size: contain;
+  .logo {
+    height: 50px;
+  }
+}
 </style>

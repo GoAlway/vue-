@@ -59,7 +59,6 @@ instance.defaults.headers.post['Content-type'] = 'application/x-www-form-urlenco
  */
 instance.interceptors.request.use(
     config => {
-        debugger
         // 根据本地是否有token判断用户是否登陆
         // token可能过期，所以每次请求都需要携带token
         // 后台根据token返回登陆信息，并返回对应的状态码
@@ -69,7 +68,7 @@ instance.interceptors.request.use(
         return config
     },
     error => {
-            Promise.error(error)
+        Promise.error(error)
     }
 )
 
